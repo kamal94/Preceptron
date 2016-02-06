@@ -1,7 +1,9 @@
 
 
+# from Wikipedia mostly
 def dot_product(values, weights):
 	return sum(value * weight for value, weight in zip(values, weights))
+
 
 # returns true if a dry run has been completed over the values
 # inputs are same as optimize_weights without learning rate
@@ -18,6 +20,8 @@ def dry_run(weights, inputs, expecteds, threshold):
 			print("input " + str(inps) + " was not a success. " + "expected " + str(expected) + " found " + str(activation))
 			return False
 	return True
+
+
 # parameters:
 # - weights: a list of length n. Elemnts of weight are numbers that specify weight of input i.
 # - inputs: a list of length m. Each element in inputs must be a list of length n.
@@ -28,6 +32,7 @@ def dry_run(weights, inputs, expecteds, threshold):
 # Returns:
 # - weights: the optimized weights that would classify the inputs.
 # 
+# Reference: Computational Neuroscience and Cognitive Modeling (Britt Anderson)
 def optimize_weights(weights, inputs, expecteds, threshold, learning_rate):
 	error_count = 1
 	count = 0
